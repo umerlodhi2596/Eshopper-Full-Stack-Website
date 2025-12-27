@@ -5,6 +5,7 @@ import databaseConnection from './config/db.js'
 import productRoutes from './routes/products.routes.js'
 import userRoutes from './routes/user.routes.js'
 import categoryRoutes from './routes/category.routes.js'
+import { errorHandler } from './middleware/errorHandler.js'
 import cors from 'cors'
 import { v2 as cloudinary } from 'cloudinary'
 import { createAdmin } from './createAdmin.js'
@@ -37,6 +38,8 @@ app.use(express.urlencoded({limit: '50mb', extended: true}))
 app.use(productRoutes);
 app.use(userRoutes);
 app.use(categoryRoutes);
+
+app.use(errorHandler);
 
 app.listen(port, () => {
     console.log(`server is running on port ${port}`)

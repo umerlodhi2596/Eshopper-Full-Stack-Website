@@ -68,7 +68,7 @@ export const getProductById = async (req, res) => {
   }
 };
 
-export const createProduct = async (req, res) => {
+export const createProduct = async (req, res, next) => {
   try {
     const body = req.body;
 
@@ -82,8 +82,9 @@ export const createProduct = async (req, res) => {
     res.json({
       message: "Product Created Successfully",
     });
-  } catch (error) {
-    console.log(error || "something went wrong");
+  } catch (err) {
+    next(err)
+
   }
 };
 
