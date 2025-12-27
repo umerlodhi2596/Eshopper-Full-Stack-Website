@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 const corsOptions = {
-  origin: ['https://eshopper-frontend.onrender.com', 'https://eshopper-full-stack-website-1.onrender.com' ],
+  origin: ['https://eshopper-frontend.onrender.com', 'https://eshopper-admin-panel.onrender.com' ],
   credentials: true,
 }
 
