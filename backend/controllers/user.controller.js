@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { User } from "../models/user.model.js";
 
-export const signUpUser = async (req, res) => {
+export const signUpUser = async (req, res, next) => {
   try {
     const body = req.body;
 
@@ -15,20 +15,17 @@ export const signUpUser = async (req, res) => {
       success: true,
       message: "You Account Created Successfully",
     });
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    next(err);
   }
 };
 
-export const loginUser = async (req, res) => {
+export const loginUser = async (req, res, next) => {
   try {
     const { identifier, password } = req.body;
 
     const user = await User.findOne({
-      $or: [
-        { username: identifier },
-        { email: identifier.toLowerCase() },
-      ],
+      $or: [{ username: identifier }, { email: identifier.toLowerCase() }],
     });
 
     if (!user) {
@@ -66,28 +63,37 @@ export const loginUser = async (req, res) => {
         message: "User is successfully login",
         success: true,
       });
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    next(err);
   }
 };
 
-export const logoutUser = (req, res) => {
-      res.cookie('token', null, {
+export const logoutUser = (req, res, next) => {
+  try {
+    res
+      .cookie("token", null, {
         httpOnly: true,
         maxAge: 0,
         secure: true,
-        sameSite: "lax"
-    }).json({
+        sameSite: "lax",
+      })
+      .json({
         success: true,
-        message: 'User is successfully logout'
-    })
-
+        message: "User is successfully logout",
+      });
+  } catch (err) {
+    next(err);
+  }
 };
 
-export const getMe = async (req, res) => {
-  const { id } = req.user;
+export const getMe = async (req, res, next) => {
+  try {
+    const { id } = req.user;
 
-  const user = await User.findById(id);
+    const user = await User.findById(id);
 
-  res.status(200).json(user);
+    res.status(200).json(user);
+  } catch (err) {
+    next(err);
+  }
 };

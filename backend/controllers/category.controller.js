@@ -1,26 +1,26 @@
 import { Category } from "../models/category.model.js";
 import { v2 as cloudinary } from "cloudinary";
 
-export const getAllCategories = async (req, res) => {
+export const getAllCategories = async (req, res, next) => {
     try {
         const categories = await Category.find().limit(6).sort({createdAt: -1});
         res.json(categories);
-    } catch (error) {
-        console.log(error);
+    } catch (err) {
+        next(err)
     }
 }
 
-export const getCategoryById = async (req, res) => {
+export const getCategoryById = async (req, res, next) => {
     try {
         const {id} = req.params;
         const category = await Category.findById(id);
         res.json(category);
-    } catch (error) {
-        console.log(error)
+    } catch (err) {
+        next(err)
     }
 }
 
-export const createCategory = async (req, res) => {
+export const createCategory = async (req, res, next) => {
     try {
         const body = req.body;
 
@@ -37,18 +37,13 @@ export const createCategory = async (req, res) => {
             message: "Category Successfully Created",
         });
 
-    } catch (error) {
-        console.error("Create category error:", error);
-
-        res.status(500).json({
-            success: false,
-            message: error.message,
-        });
+    } catch (err) {
+       next(err)
     }
 };
 
 
-export const deleteCategory = async (req, res) => {
+export const deleteCategory = async (req, res, next) => {
     try {
         const {id} = req.params;
 
@@ -58,7 +53,7 @@ export const deleteCategory = async (req, res) => {
             message: "Category Deleted Successfully"
         })
 
-    } catch (error) {
-        console.log(error)
+    } catch (err) {
+        next(err)
     }
 }

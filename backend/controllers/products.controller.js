@@ -1,7 +1,7 @@
 import { Product } from "../models/product.model.js";
 import { v2 as cloudinary } from "cloudinary";
 
-export const getAllProducts = async (req, res) => {
+export const getAllProducts = async (req, res, next) => {
   try {
     const { slug, search, page, limit, minPrice, maxPrice, sort } = req.query;
 
@@ -53,18 +53,18 @@ export const getAllProducts = async (req, res) => {
       limit: limitNumber,
       totalPages,
     });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+  } catch (err) {
+    next(err)
   }
 };
 
-export const getProductById = async (req, res) => {
+export const getProductById = async (req, res, next) => {
   try {
     const { id } = req.params;
     const product = await Product.findById(id);
     res.json(product);
-  } catch (error) {
-    console.log(error || "something went wrong");
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -88,7 +88,7 @@ export const createProduct = async (req, res, next) => {
   }
 };
 
-export const updateProduct = async (req, res) => {
+export const updateProduct = async (req, res, next) => {
   try {
     const { id } = req.params;
     const body = req.body;
@@ -96,30 +96,30 @@ export const updateProduct = async (req, res) => {
     res.json({
       message: "Product Updated Successfully",
     });
-  } catch (error) {
-    console.log(error || "something went wrong");
+  } catch (err) {
+    next(err)
   }
 };
 
-export const deleteProduct = async (req, res) => {
+export const deleteProduct = async (req, res, next) => {
   try {
     const { id } = req.params;
     await Product.findByIdAndDelete(id);
     res.json({
       message: "Product Deleted Successfully",
     });
-  } catch (error) {
-    console.log(error || "something went wrong");
+  } catch (err) {
+    next(err)
   }
 };
 
-export const getTrandyProducts = async (req, res) => {
+export const getTrandyProducts = async (req, res, next) => {
   try {
     const trendyProducts = await Product.find({ tag: "trendy" })
       .limit(8)
       .sort({ createdAt: -1 });
     res.status(200).json(trendyProducts);
-  } catch (error) {
-    console.log(error);
+  } catch (err) {
+    next(err)
   }
 };
