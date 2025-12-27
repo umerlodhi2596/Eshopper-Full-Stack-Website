@@ -35,7 +35,7 @@ function LoginForm() {
     onSubmit: async (values) => {
       let res = await loginAdmin(values);
       if (res?.success) {
-        navigate("/");
+        navigate("/add-product");
       }
       resetForm();
     },
