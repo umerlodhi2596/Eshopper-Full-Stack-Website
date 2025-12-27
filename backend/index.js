@@ -17,6 +17,10 @@ const corsOptions = {
   credentials: true,
 }
 
+app.get('/', (req, res) => {
+  res.json({message: "Welcome form server"})
+})
+
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
