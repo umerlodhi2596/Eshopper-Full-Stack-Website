@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../api/api";
+import toast from 'react-hot-toast';
 
 function ProductsList() {
   let [products, setProducts] = useState([]);
@@ -8,6 +9,12 @@ function ProductsList() {
     const res = await api.get("/products");
     setProducts(res.data.products);
   };
+
+  const handleProductDelete = (id) => {
+    const res = api.delete(`product/delete/${id}`)
+    toast.error(res.data.message);
+    getAllProducts();
+  }
 
   useEffect(() => {
     getAllProducts();
@@ -39,7 +46,7 @@ function ProductsList() {
                   <td>{product.price}</td>
                   <td>
                     <button className="me-2">View Detail</button>
-                    <button>Delete</button>
+                    <button onClick={() => handleProductDelete(product._id)}>Delete</button>
                   </td>
                 </tr>
               ))}
