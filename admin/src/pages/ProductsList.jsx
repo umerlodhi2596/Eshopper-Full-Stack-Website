@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../api/api";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 function ProductsList() {
   let [products, setProducts] = useState([]);
@@ -9,12 +9,18 @@ function ProductsList() {
     const res = await api.get("/products");
     setProducts(res.data.products);
   };
+  const handleProductDelete = async (id) => {
+    try {
+      const res = await api.delete(`/product/delete/${id}`);
 
-  const handleProductDelete = (id) => {
-    const res = api.delete(`product/delete/${id}`)
-    toast.error(res.data.message);
-    getAllProducts();
-  }
+      toast.success(res.data.message);
+
+      // Refresh list AFTER delete finishes
+      getAllProducts();
+    } catch (error) {
+      toast.error("Failed to delete product");
+    }
+  };
 
   useEffect(() => {
     getAllProducts();
@@ -46,7 +52,9 @@ function ProductsList() {
                   <td>{product.price}</td>
                   <td>
                     <button className="me-2">View Detail</button>
-                    <button onClick={() => handleProductDelete(product._id)}>Delete</button>
+                    <button onClick={() => handleProductDelete(product._id)}>
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}
