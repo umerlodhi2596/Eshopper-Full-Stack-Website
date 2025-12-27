@@ -1,0 +1,46 @@
+
+.dashboard-content {
+  margin-left: 260px;
+  padding: 100px 20px;
+}
+
+
+
+
+.product-list-table th, td {
+  vertical-align: middle;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.product-list-table th{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.product-list-table .product-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-list-table .product-info .product-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.product-list-table .product-info img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.product-list-table button {
+  padding: 8px 16px;
+  border: 1px solid #EEEEEE;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}

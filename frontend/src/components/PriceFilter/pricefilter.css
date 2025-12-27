@@ -1,0 +1,24 @@
+.price-filter {
+    border-bottom: 1px solid #EDF1FF;
+}
+
+h3 {
+    margin: 0;
+    padding-bottom: 20px;
+    color: #000;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.filter-item {
+    padding: 10px 0;
+}
+
+.filter-item label {
+    padding-left: 14px;
+    color: #6a6a6a;
+}
+
+.size-filter {
+    padding-top: 20px;
+}

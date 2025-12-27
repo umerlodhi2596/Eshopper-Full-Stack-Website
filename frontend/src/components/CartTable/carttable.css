@@ -1,0 +1,67 @@
+.table thead th{
+    background-color: #EDF1FF!important;
+}
+
+.table thead th:not(:first-child){
+    text-align: center;
+}
+
+.table td {
+    border: 1px solid #eeee;
+    text-align: center;
+}
+
+tr, td {
+    vertical-align: middle;
+}
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.product-info img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.product-info h5 {
+    font-size: 17px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.table .quantity-count {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.table .quantity-btn {
+    background-color: #D19C97;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.table .remove-btn {
+    padding: 10px 20px;
+    background-color: #D19C97;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.table .empty-cart {
+    text-align: center;
+    color: #949494ee;
+    padding: 50px 0;
+}
+
+.table .empty-cart .cart-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}

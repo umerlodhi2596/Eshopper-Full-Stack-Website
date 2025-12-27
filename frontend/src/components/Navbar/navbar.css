@@ -1,0 +1,122 @@
+.navbar-wrapper {
+    border-top: 1px solid #EDF1FF;
+}
+
+.navbar-wrapper .dropdown {
+    width: 100%;
+    position: relative;
+}
+
+.navbar-wrapper .dropdown .dropdown-title {
+    background-color: #D19C97;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.navbar-wrapper .dropdown .dropdown-title h5 {
+    margin: 0;
+}
+
+.navbar-wrapper .dropdown .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s ease;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.navbar-wrapper .dropdown .menu.open {
+    max-height: 300px;
+}
+
+.navbar-wrapper .dropdown .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #EDF1FF;
+}
+
+.navbar-wrapper .dropdown .menu ul li a {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    color: #000;
+    border-bottom: 1px solid #EDF1FF;
+    transition: 0.2s all ease;
+}
+
+.navbar-wrapper .dropdown .menu ul li a:hover {
+    color: #D19C97;
+}
+
+.navbar-wrapper .navbar .navbar-brand {
+    font-size: 30px;
+    font-weight: 600;
+    display: none;
+}
+
+.navbar-wrapper .navbar .navbar-brand span {
+    color: #D19C97;
+    padding: 5px 10px;
+    border: 1px solid #EDF1FF;
+}
+
+.navbar-wrapper .navbar .navbar-nav .nav-item .nav-link {
+    color: #000;
+}
+
+.navbar-wrapper .navbar .navbar-nav .nav-item .nav-link:hover,
+.navbar-wrapper .navbar .navbar-nav .nav-item .nav-link.active {
+    color: #D19C97 !important;
+}
+
+.current-user-info .user-info-inner {
+    display: flex;
+    align-items: center;
+}
+
+.current-user-info .user-info-inner h6 {
+    margin: 0;
+    padding: 0 20px;
+}
+
+.current-user-info .user-info-inner button {
+    padding: 10px 24px;
+    background-color: #D19C97;
+    border: none;
+    outline: none;
+    color: #000;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.current-user-info .user-info-inner button:hover {
+    background-color: #d27d76;
+    color: #fff;
+}
+
+.navbar-wrapper .navbar .nav-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mb-show {
+    display: none;
+}
+
+@media screen and (max-width: 991px) { 
+    .navbar-wrapper .navbar .navbar-brand {
+        display: block;
+    }
+    .navbar-wrapper .navbar .nav-right {
+        display: none;
+    }
+    .mb-show {
+        display: block;
+    }
+}

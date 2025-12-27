@@ -1,0 +1,60 @@
+.collection-card-wrapper {
+    position: relative;
+}
+
+.collection-card-wrapper .collection-card {
+    background-color: #EDF1FF;
+    padding: 50px;
+}
+
+.collection-card .card-content.right {
+    text-align: right;
+}
+
+.collection-card .card-content.left {
+    text-align: left;
+}
+
+.collection-card .card-content h6 {
+    color: #D19C97;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.collection-card .card-content h2 {
+    color: #000;
+    font-size: 38px;
+    font-weight: 600;
+    padding: 15px 0;
+}
+
+.collection-card .card-content button {
+    padding: 10px 24px;
+    background-color: transparent;
+    border: 1px solid #D19C97;
+    outline: none;
+    color: #D19C97;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.collection-card-wrapper .collection-image {
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+}
+
+.collection-card-wrapper .collection-image.right {
+    right: 0;
+}
+
+.collection-card-wrapper .collection-image.left {
+    left: 0;
+}
+
+.collection-card-wrapper .collection-image img {
+    width: 100%;
+}
+

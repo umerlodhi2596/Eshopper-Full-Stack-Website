@@ -1,0 +1,58 @@
+.hero-wrapper .hero-col {
+    display: flex;
+    justify-content: end;
+}
+
+.hero-wrapper .carousel-item {
+    width: 100%;
+    height: 60vh;
+}
+
+.hero-wrapper .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.hero-wrapper .carousel-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero-wrapper .carousel-content h5 {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.hero-wrapper .carousel-content h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding: 18px 0;
+}
+
+.hero-wrapper .carousel-content .carousel-btn {
+    padding: 10px 24px;
+    background-color: white;
+    color: black;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    font: 14px;
+}

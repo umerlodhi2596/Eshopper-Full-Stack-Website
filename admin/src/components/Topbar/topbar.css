@@ -1,0 +1,41 @@
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+    background-color: #fff;
+    padding: 14px 0;
+    z-index: 1000;
+}
+
+.top-bar .top-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-bar-inner .top-bar-left .top-bar-logo {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.top-bar-inner .top-bar-left .top-bar-logo span {
+    display: inline-block;
+    padding: 0 12px;
+    border: 1px solid #fff;
+    color: #c88882;
+    font-size: 35px;
+    margin-right: 10px;
+}
+
+.top-bar-inner .top-bar-right button {
+    background-color: #303030;
+    padding: 10px 24px;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    cursor: pointer;
+}

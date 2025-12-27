@@ -1,0 +1,10 @@
+
+.category-table-btn {
+  padding: 8px 16px;
+  border: 1px solid #EEEEEE;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+}

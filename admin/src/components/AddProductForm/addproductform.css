@@ -1,0 +1,58 @@
+.add-product-wrapper .add-product-form {
+    width: 500px;
+}
+
+.add-product-form .form-title h4 {
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+.add-product-form .product-form input[type="file"] {
+    display: none;
+}
+
+.add-product-form .form-select:focus {
+    box-shadow: none;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+}
+
+.add-product-form .product-form label {
+    padding: 15px 20px;
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.add-product-form .product-form label:active {
+    transform: scale(0.9);
+}
+
+.add-product-form .product-form .form-control {
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+}
+
+.add-product-form .product-form .form-control:focus {
+    box-shadow: none;
+}
+
+.add-product-form .product-form .add-product-btn {
+    padding: 10px 28px;
+    background-color: #202020;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.add-product-form .product-form .add-product-btn:hover {
+    background-color: #000;
+}

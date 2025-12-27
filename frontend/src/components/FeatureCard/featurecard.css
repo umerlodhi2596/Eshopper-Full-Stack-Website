@@ -1,0 +1,22 @@
+.feature-card {
+    border: 1px solid #EDF1FF;
+    padding: 20px 30px;
+}
+
+.feature-card .feature-card-inner {
+    display: flex;
+    align-items: center;
+}
+
+.feature-card .feature-card-inner .feature-icon {
+    color: #D19C97;
+    font-size: 38px;
+}
+
+.feature-card .feature-card-inner .feature-content h4 {
+    color: #000;
+    padding-left: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}

@@ -1,0 +1,132 @@
+.topbar {
+    background-color: #EDF1FF;
+    padding: 8px 0;
+}
+
+.topbar .top-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar .top-bar-inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar .top-bar-inner ul li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.topbar .top-bar-inner ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
+.topbar .top-bar-inner .top-bar-left ul li {
+    border-right: 1px solid #000;
+}
+
+.topbar .top-bar-inner .top-bar-left ul li a:hover {
+    text-decoration: underline #000;
+}
+
+/* navbar top */
+.nav-top {
+    padding: 12px 0;
+}
+
+.nav-top .nav-logo h3 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.nav-top .nav-logo h3 span {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1px solid #EDF1FF;
+    color: #D19C97;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.nav-top .nav-search .search {
+    width: 550px;
+    border: 1px solid #EDF1FF;
+    display: flex;
+    align-items: center;
+}
+
+.nav-top .nav-search .search input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.nav-top .nav-search .search .search-icon {
+    padding: 6px 10px;
+    color: #D19C97;
+    font-size: 20px;
+    border-left: 1px solid #EDF1FF;
+    cursor: pointer;
+}
+
+.nav-top .nav-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.nav-top .nav-right .nav-icon {
+    padding: 6px 10px;
+    border: 1px solid #EDF1FF;
+    cursor: pointer;
+}
+
+.nav-top .nav-right .nav-icon span {
+    display: inline-block;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 991px) {
+    .nav-logo-col {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 730px) {
+
+    .nav-top .nav-search .search {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .nav-top .nav-search .search {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .nav-top .nav-search .search {
+        width: 230px;
+    }
+}
+
+@media screen and(max-width: 400px) {
+    
+    .nav-top .nav-right .nav-icon {
+        padding: 4px 8px;
+    }
+    .nav-top .nav-right .nav-icons span {
+        font-size: 12px;
+    }
+
+}

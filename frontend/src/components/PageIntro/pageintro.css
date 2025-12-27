@@ -1,0 +1,37 @@
+.intro-wrapper {
+    background-color: #EDF1FF;
+}
+
+.intro-wrapper .intro {
+    text-align: center;
+}
+
+.intro-wrapper .intro h1 {
+    color: #000;
+    font-size: 40px;
+    font-weight: 600;
+    padding-bottom: 16px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.intro-wrapper .back-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-wrapper .back-link a {
+    text-decoration: none;
+    color: #D19C97;
+}
+
+.intro-wrapper .back-link span {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.intro-wrapper .back-link p {
+    color: #6b6b6b;
+    margin: 0;
+}
