@@ -23,7 +23,7 @@ function ProductCard({product}) {
                     <img src={product.image} alt={product.title} />
                 </div>
                 <div className="card-content">
-                    <h5>{product.title}</h5>
+                    <h5>{product.title.substring(0, 20)}...</h5>
                     <p>PKR: {product.price}</p>
                 </div>
                 <div className="card-footer">
