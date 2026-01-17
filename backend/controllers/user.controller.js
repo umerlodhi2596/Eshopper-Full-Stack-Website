@@ -71,7 +71,7 @@ export const loginUser = async (req, res, next) => {
 export const logoutUser = (req, res, next) => {
   try {
     res
-      .cookie("token", null, {
+      .cookie("token", "", {
         httpOnly: true,
         maxAge: 0,
         secure: true,
