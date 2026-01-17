@@ -76,6 +76,7 @@ export const logoutUser = (req, res, next) => {
         maxAge: 0,
         secure: true,
         sameSite: "lax",
+        expires: new Date(0),
       })
       .json({
         success: true,
