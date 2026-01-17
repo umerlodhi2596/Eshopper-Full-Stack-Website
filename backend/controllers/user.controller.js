@@ -49,7 +49,7 @@ export const loginUser = async (req, res, next) => {
         role: user.role,
       },
       process.env.JWT_SECRET_KEY,
-      { expiresIn: "1hr" }
+      { expiresIn: "1hr" },
     );
 
     res
@@ -71,14 +71,11 @@ export const loginUser = async (req, res, next) => {
 export const logoutUser = (req, res, next) => {
   try {
     res
-      .cookie("token", "", {
+      .clearCookie("token", {
         httpOnly: true,
-        maxAge: 0,
         secure: true,
-        sameSite: "lax",
-        expires: new Date(0),
-      })
-      .json({
+        path: "/",
+      }).json({
         success: true,
         message: "User is successfully logout",
       });
