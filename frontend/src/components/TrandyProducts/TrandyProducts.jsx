@@ -3,6 +3,7 @@ import "./trandyproducts.css";
 import Title from "../Title/Title";
 import ProductCard from "../ProductCard/ProductCard";
 import api from "../../api/api";
+import PageLoader from "../PageLoader/PageLoader";
 
 function TrandyProducts() {
   const [trandyProducts, setTrandyProducts] = useState([]);
@@ -15,7 +16,7 @@ function TrandyProducts() {
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -31,11 +32,15 @@ function TrandyProducts() {
             <Title title={"Trandy Products"} />
           </div>
           <div className="row">
-            {trandyProducts.map((product, index) => (
-              <div key={index} className="col-md-3">
-                <ProductCard product={product}/>
-              </div>
-            ))}
+            {loading ? (
+              <PageLoader />
+            ) : (
+              trandyProducts.map((product, index) => (
+                <div key={index} className="col-md-3">
+                  <ProductCard product={product} />
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
