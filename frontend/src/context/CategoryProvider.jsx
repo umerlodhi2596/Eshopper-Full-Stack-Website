@@ -4,11 +4,19 @@ import api from "../api/api";
 export const CategoryContext = createContext();
 
 function CategoryProvider({children}) {
+
+  let [loading, setLoading] = useState(true);
   let [categories, setCategories] = useState([]);
 
   const getAllCategories = async () => {
-    let res = await api.get("/categories");
-    setCategories(res.data);
+    try {
+      let res = await api.get("/categories");
+      setCategories(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -17,7 +25,7 @@ function CategoryProvider({children}) {
 
   return (
     <>
-      <CategoryContext.Provider value={{categories}}>
+      <CategoryContext.Provider value={{categories, loading}}>
         {children}
       </CategoryContext.Provider>
     </>

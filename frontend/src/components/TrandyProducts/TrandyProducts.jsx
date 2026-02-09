@@ -6,10 +6,17 @@ import api from "../../api/api";
 
 function TrandyProducts() {
   const [trandyProducts, setTrandyProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getTrandyProducts = async () => {
-    let res = await api.get("/products/trandy");
-    setTrandyProducts(res.data);
+    try {
+      let res = await api.get("/products/trandy");
+      setTrandyProducts(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false)
+    }
   };
 
   useEffect(() => {
